@@ -3,7 +3,7 @@
 
 1. Go to [security.microsoft.com](https://security.microsoft.com).
 2. Navigate to **Settings** and select **Endpoints**.
-![Select Endpoint](https://github.com/StephenOwusuB/Integrated-Threat-Hunting-and-SOAR-with-KQL-Queries-in-Microsoft-Sentinel-Home-Lab/blob/main/images/images/Log%20analytics%20workspaces%201.png)
+![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%202.png)
 4. Scroll down to **Device management** and select **Onboarding**.
 5. Choose the onboarding options with the deployment method set to **Group Policy**. Ensure to download the package for Group Policy as the scripts vary based on the deployment method.
 6. On your Domain Controller (DC), extract the downloaded package. You will see `WindowsDefenderATPOnboardscript` and `OptionalParamsPolicy` folders. The `OptionalParamsPolicy` folder includes two files used for enabling sample collection for deep analysis. The `WindowsDefenderATPOnboardscript` is used to onboard devices.
