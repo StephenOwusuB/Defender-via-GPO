@@ -3,15 +3,16 @@
 
 1. Go to [security.microsoft.com](https://security.microsoft.com).
 2. Navigate to **Settings** and select **Endpoints**.
-3. Scroll down to **Device management** and select **Onboarding**.
-4. Choose the onboarding options with the deployment method set to **Group Policy**. Ensure to download the package for Group Policy as the scripts vary based on the deployment method.
-5. On your Domain Controller (DC), extract the downloaded package. You will see `WindowsDefenderATPOnboardscript` and `OptionalParamsPolicy` folders. The `OptionalParamsPolicy` folder includes two files used for enabling sample collection for deep analysis. The `WindowsDefenderATPOnboardscript` is used to onboard devices.
-6. Go to **Group Policy Management**:
+![Select Endpoint](https://github.com/StephenOwusuB/Integrated-Threat-Hunting-and-SOAR-with-KQL-Queries-in-Microsoft-Sentinel-Home-Lab/blob/main/images/images/Log%20analytics%20workspaces%201.png)
+4. Scroll down to **Device management** and select **Onboarding**.
+5. Choose the onboarding options with the deployment method set to **Group Policy**. Ensure to download the package for Group Policy as the scripts vary based on the deployment method.
+6. On your Domain Controller (DC), extract the downloaded package. You will see `WindowsDefenderATPOnboardscript` and `OptionalParamsPolicy` folders. The `OptionalParamsPolicy` folder includes two files used for enabling sample collection for deep analysis. The `WindowsDefenderATPOnboardscript` is used to onboard devices.
+7. Go to **Group Policy Management**:
     - Expand your domain.
     - Select **Group Policy**.
     - Right-click and select **New**.
     - Name your GPO (e.g., Onboarding MDE Device).
-7. To ensure the file is accessible to the client from the shared location:
+8. To ensure the file is accessible to the client from the shared location:
     - Right-click the Group Policy and select **Edit**.
     - Go to **Computer Configuration** > **Preferences** > **Control Panel Settings**.
     - Click **Scheduled Tasks**.
