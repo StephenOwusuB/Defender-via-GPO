@@ -5,18 +5,18 @@
 2. Navigate to **Settings** and select **Endpoints**.
 ![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%202.png)
 3. Scroll down to **Device management** and select **Onboarding**.
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%204.png)
+[GPO](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%204.png)
 4. Choose the onboarding options with the deployment method set to **Group Policy**. Ensure to download the package for Group Policy as the scripts vary based on the deployment method.
 5. On your Domain Controller (DC), extract the downloaded package. You will see `WindowsDefenderATPOnboardscript` and `OptionalParamsPolicy` folders. The `OptionalParamsPolicy` folder includes two files used for enabling sample collection for deep analysis. The `WindowsDefenderATPOnboardscript` is used to onboard devices.
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%206.png)
-6. Go to **Group Policy Management**:
+6. ![GPO](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%206.png)
+7. Go to **Group Policy Management**:
     - Expand your domain.
     - Select **Group Policy**.
     - Right-click and select **New**.
     - Name your GPO (e.g., Onboarding MDE Device).
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%208.png)
+![New GPO](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%208.png)
 
-7. To ensure the file is accessible to the client from the shared location:
+8. To ensure the file is accessible to the client from the shared location:
     - Right-click the Group Policy and select **Edit**.
     - Go to **Computer Configuration** > **Preferences** > **Control Panel Settings**.
     - Click **Scheduled Tasks**.
@@ -25,12 +25,12 @@
     - Specify security options by typing **SYSTEM** to select `NT AUTHORITY\SYSTEM` and ensure it runs with the highest privileges.
     - Define an action by selecting the **Action** tab at the top and clicking **New**. Define the location where the file exists.
 
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%209.png)
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2010.png)
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2011.png)
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2012.png)
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2013.png)
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2026.png)
+![New GPO](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%209.png)
+![Schedule task](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2010.png)
+![Schedule task](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2011.png)
+![Schedule task](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2012.png)
+![Schedule task](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2013.png)
+![Schedule task](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2026.png)
 ## Creating a Share Folder
 
 1. Go to **Server Manager** and click on **File and Shares**.
@@ -57,12 +57,12 @@ This means the Group Policy Object (GPO) has been created with the respective ta
 2. Go to the file location, expand the `OptionalParamsPolicy` folder, and copy the ADMX file.
 3. Navigate to `C:\Windows\PolicyDefinitions` and paste the ADMX file.
 4. Copy the `en-US` file and paste it in `C:\Windows\PolicyDefinitions\en-US`.
-![Select Endpoint](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2027.png)
+   Sample Collection](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2027.png)
 5. Restart the Group Policy Management Console. If changes are not showing, restart the server.
 7. Link the GPO to the Organizational Unit (OU) by right-clicking the OU and selecting **Link Existing GPO**.
 
 Select the GPO to link it.
-
+![Link GPO](https://github.com/StephenOwusuB/Implementing-Microsoft-Defender-for-Enterprise-Security/blob/main/images/DGPO%20images/MDE%20onboard%2028.png)
 ---
 
 
